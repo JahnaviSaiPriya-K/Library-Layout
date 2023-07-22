@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIBRARY</title>
+<style>
+#image{
+ border-radius:100px;
+} 
+#fi{ 
+position: relative;
+left: 700px;
+top: 5px;
+ border:2px solid black;
+ border-radius:10px; 
+ height: 33px;
+ width:200px;
+}
+.button {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  color: #fff; 
+  left: 400px;
+  bottom: 30px;
+  cursor: pointer;
+  background-color: #db5069;
+  transition: all 0.2s ease;
+}
+.button:active {
+  transform: scale(0.96);
+}
+.button:before,
+.button:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+.button.animate::before {
+  top: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+.button.animate::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+} 
+.aq{
+ display:flex;
+ width: 1255px;
+} 
+.navbar{
+ background-color:black; 
+ width:85%;
+ height:50px;
+ width:455px; 
+ margin:auto;
+ padding: 11px 0;
+ padding-left:800px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+} 
+.navbar ul li{
+ list-style:none;
+ display:inline-block;
+ margin:0 20px;
+ position:relative; 
+}
+.navbar ul li a{
+ text-decoration:none;
+ color:white;
+ test-transform:uppercase;
+} 
+.navbar ul li::after{
+ content:'';
+ height:2px;
+ width:0%;
+ background:#ff647f;
+ position:absolute;
+ left:0;
+ bottom:-5px; 
+ transition:0.5s;
+} 
+.navbar ul li:hover::after{
+ width:100%;
+} 
+ 
+.q{
+ position:relative;
+} 
+.pret{
+ position:absolute;
+ top: 8px;
+ left: 16px;
+}
+pre{ 
+ font-weight:bold;
+ font-size:40px;
+ color:white; 
+ font-family:Georgia;
+}  
+.cont {
+  position: relative;
+  width: 100%;
+}
+
+.column {
+	  float: left;
+	  width: 30%;
+	  padding:15px;
+	}
+.i {
+ width: 370px; 
+  display: block;
+  /* height: auto; */
+ border-radius:40px;
+	} 
+.overlay {
+  height:251px;
+  width:374px;
+  position: absolute;
+  top: 12px;
+  bottom: 0;
+  left: 15px;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+ border-radius:40px;
+}	
+.cont:hover .overlay {
+  opacity: 1;
+}
+.over{
+  height:251px;
+  width:374px;
+  position: absolute;
+  top: 12px;
+  bottom: 0;
+  left: 420px;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA; 
+  border-radius:40px;
+}	
+.cont:hover .over{
+  opacity: 1;
+} 
+.ov{
+  height:251px;
+  width:374px;
+  position: absolute;
+  top: 12px;
+  bottom: 0;
+  left: 824px;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+  border-radius:40px;
+}	
+.cont:hover .ov{
+  opacity: 1;
+}
+.digi {
+  height:251px;
+  width:374px;
+  position: absolute;
+  top: 295px;
+  bottom: 0;
+  left: 15px;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+ border-radius:40px;
+}	
+.cont:hover .digi {
+  opacity: 1;
+}
+.staff{
+  height:251px;
+  width:374px;
+  position: absolute;
+  top: 295px;
+  bottom: 0;
+  left: 420px;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA; 
+  border-radius:40px;
+}	
+.cont:hover .staff{
+  opacity: 1;
+} 
+.er{
+  height:251px;
+  width:374px;
+  position: absolute;
+  top: 295px;
+  bottom: 0;
+  left: 824px;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+  border-radius:40px;
+}	
+.cont:hover .er{
+  opacity: 1;
+}
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+} 
+.onli{
+ font-family:Times New Roman;
+ font-weight:20;
+ font-size:20px;
+} 
+footer{
+  background-color: #ff647f;
+  height: 50px; 
+  font-weight: 600; 
+  text-align: center;
+  padding-top: 10px;
+}
+</style>
+</head> 
+<body>
+<div class="aq" style="background-color:#ff647f">
+<img id="image" src="https://i.pinimg.com/474x/44/a3/fd/44a3fd7c72db93b9e50d95f67c35792a--library-logo-school-logo.jpg" alt="logo" width="60px"> 
+<div style="font-size:44px">LIBRARY</div>
+<input id="fi" type="text" name="BookName" placeholder="search">   
+<a href="#"> 
+  <i class="fa fa-search" style="font-size:20px;position: absolute;left: 1090px;bottom: 204px;"></i>
+</a>
+</div> 
+<div class="navbar">
+<ul>
+<li><a class="active" href="#" >HOME</a></li>
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">CONTACT</a></li>
+<li><a href="#">HELP</a></li>  
+</ul>
+</div> 
+<div class="q">
+<img src="https://track2traininginstitute.files.wordpress.com/2021/06/books_new-e1611252343470.jpg" alt="image" width="1250px" height="250px">
+<div class="pret">
+<pre>Want to know 
+which books are available ?</pre> 
+<button class="button">Click Here</button>
+<script>
+  const button = document.querySelector(".button");
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault;
+    button.classList.add("animate");
+    setTimeout(() => {
+      button.classList.remove("animate");
+    }, 600);
+  });
+</script> </div>
+</div> 
+<h1>More About Our Library</h1>
+<div class="container">  
+           <div class="cont">
+	   <div class="column">
+	     <img class="i" src="https://img.freepik.com/free-photo/alarm-clock-showing-time-10-o-clock-bookshelf_23-2147943593.jpg?w=2000" alt="image1">
+              <div class="overlay">
+             <div class="text">Timings <br>
+              24/7 Available
+             </div> 
+             <div></div>
+            </div>
+	   </div>
+	    </div> 
+          <div class="cont">
+	   <div class="column">
+	     <img class="i" src="https://booklogix.com/wp-content/uploads/2020/03/sandra-seitamaa-QdecY4r21RQ-unsplash-1536x1025.jpg" height="248px" alt="image1">
+              <div class="over">
+    		<div class="text">Wide Collection Of Books</div>
+  	      </div>
+	   </div>
+	 </div>
+	<div class="cont">
+	   <div class="column">
+	     <img class="i" style="border: 2px solid grey;" src="https://tse3.mm.bing.net/th?id=OIP.8Ldk2LR12xOWq38j1VsnoQHaHa&pid=Api&P=0&h=180" height="248px" alt="image1">
+              <div class="ov">
+    		<div class="text">Download Easily</div>
+             </div>
+	   </div>
+	 </div>
+</div>
+<div class="container">  
+           <div class="cont">
+	   <div class="column">
+	     <img class="i" style="border: 2px solid grey;" src="http://i.huffpost.com/gen/2410082/images/o-ACCESS-TO-INFORMATION-facebook.jpg" height="248px" alt="image1">
+              <div class="digi">
+             <div class="text">Can Access AnyWhere</div>
+            </div>
+	   </div>
+	    </div> 
+          <div class="cont">
+	   <div class="column">
+	     <img class="i" src="https://storage.googleapis.com/ltkcms.appspot.com/fs/yd/images/cover/book-genres.base?v=1591896477" height="248px"alt="image1">
+              <div class="staff">
+    		<div class="text">Different Types Of Books Are Available</div>
+  	      </div>
+	   </div>
+	 </div>
+	<div class="cont">
+	   <div class="column">
+	     <img class="i" src="http://www.wallpaperbetter.com/wallpaper/665/807/766/historical-books-2K-wallpaper.jpg"  height="248px" alt="image1">
+              <div class="er">
+    		<div class="text">Historical Books Are Also Available</div>
+             </div>
+	   </div>
+	 </div>
+</div>
+<h1>ELECTRONIC RESOURCES</h1>
+<div class="onli">
+<p>1. IEEE ASPP ONLINE PACKAGE: Journals and Magazines <a href="https://innovate.ieee.org/ieee-all-society-periodicals-package-aspp/" target="_blank">https://innovate.ieee.org/ieee-all-society-periodicals-package-aspp/</a></p>
+
+<p>2. INFLIBNET N-LIST Digital Library from UGC- 6400 electronic journals & 34,38,000 electronic books
+
+<a href="http://nlist.inflibnet.ac.in" target="_blank">http://nlist.inflibnet.ac.in</a></p>
+
+<p>3. DELNET-5000+FULL TEXTE - journals 10966 free ebooks in 709 categories and 100000+ Thesis/Dissertations <a href="https://delnet.in/" target="_blank">https://delnet.in/</a></p>
+
+<p>4. NPTEL - video lectures: 192.168.13.62 (local host)</p>
+
+<p>5. National Digital Library of India <a href="https://www.ndl.gov.in/" target="_blank">https://www.ndl.gov.in/</a></p>
+
+<p>6. E-PG PATHSHALA: LECTURES NOTES- <a href="https://epgp.inflibnet.ac.in/" target="_blank">https://epgp.inflibnet.ac.in/</a></p>
+</div>  
+</body>
+<footer>
+  <p>Copyright@2023</p>
+</footer>
+</html>
